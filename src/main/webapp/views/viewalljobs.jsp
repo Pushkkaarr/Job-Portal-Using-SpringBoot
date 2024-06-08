@@ -3,7 +3,7 @@
 <%@ page isELIgnored="false"%>
 <%@ page import="java.util.List" %>
 <%@ page import="com.pushkar.JobApp.model.JobPost" %>
-<%@ page import="com.pushkar.JobApp.repo.JobRepo" %>
+<%@ page import="com.pushkar.JobApp.repository.JobRepository" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
