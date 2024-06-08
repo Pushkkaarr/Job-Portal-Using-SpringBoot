@@ -1,5 +1,5 @@
 <h1 align="center">Job Portal using SpringBoot</h1>
-<b>Description</b> : - With the help of SpringBoot we Build a JobPortal for Freshers and JobSeeker's who needs new jobs and also for Company Employer's who want to post jobs in market.<br><br><hr>
+<b>Description</b> : - With the help of SpringBoot we Build a JobPortal for Freshers and JobSeeker's who needs new jobs and also for Company Employer's who want to post jobs in market.<br>In the project, web pages are using JavaServer Pages, or JSP for short. You'll spot these .jsp files in WEBAPP/views folder, where they work  to mix Java code right into our HTML. So, whenever you see stuff like <%@ page %>, <jsp:include>, or <jsp:useBean> they are of JSP Files.<br><br><hr>
 <b>Along with SpringBoot we have used following dependecies:<br></b><hr>
 <ul>
 <li>1.Tomcat Jasper - to convert our jsp files into servlets<br></li>
