@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Telusko Job Portal</title>
+<title>Job Portal</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -39,7 +39,7 @@ p {
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-clr">
 		<div class="container">
-			<a class="navbar-brand fs-1 fw-medium " href="#">Telusko Job
+			<a class="navbar-brand fs-1 fw-medium " href="#"> Job
 				Portal Web App</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -55,7 +55,7 @@ p {
 							Jobs</a></li>
 
 					<li class="nav-item"><a class="nav-link"
-						href="https://telusko.com/">Contact</a></li>
+						href="https://gmail.com/">Contact</a></li>
 				</ul>
 			</div>
 		</div>
