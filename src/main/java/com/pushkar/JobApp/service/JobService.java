@@ -15,11 +15,26 @@ public class JobService {
 
     // method to add a jobPost
     public void addJobPost(JobPost jobPost) {
-        repo.addJobPost(jobPost);
+        repo.save(jobPost);
 
     }
+    public List<JobPost> getAllJobPosts() {
+        return repo.findAll();
+    }
 
-    public List<JobPost> returnAllJobPosts() {
-        return repo.returnAllJobPosts();
+    public JobPost getJob(int postId){
+        return repo.findById(postId).orElse(new JobPost());
+    }
+
+    public void updateJob(JobPost job){
+        repo.save(job);
+    }
+
+    public void deleteJob(int postId){
+        repo.deleteById(postId);
+    }
+
+    public void load(){
+
     }
 }
