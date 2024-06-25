@@ -5,8 +5,7 @@ import com.pushkar.JobApp.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +24,17 @@ public class JobController {
         return "home";
     }
 
+    @GetMapping("jobPost/{postId}")
+    @ResponseBody //for returning actual data and not the view pages // we also use @RestController for all if no JSP pages
+    public JobPost getJob(@PathVariable("postId") int postId){
+        return service.getJob(postId);
+    }
+    @GetMapping("jobPosts")
+    @ResponseBody
+    public List<JobPost> getAlljobs(){
+        return service.getAllJobPosts();
+    }
+
     @GetMapping("/addjob")
     public String addjob(){
         return "addjob";
@@ -36,6 +46,10 @@ public class JobController {
         service.addJobPost(jobPost);
         return "success";
     }
+
+//    public List<JobPost> searchByKeyword(){
+//
+//    }
 
     @GetMapping("/viewalljobs")
     public String viewJobs(Model model){
