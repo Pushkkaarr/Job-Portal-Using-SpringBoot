@@ -35,9 +35,23 @@ public class JobController {
         return service.getAllJobPosts();
     }
 
-    @GetMapping("/addjob")
-    public String addjob(){
-        return "addjob";
+    @PostMapping("jobPost")
+    public void addjob(@RequestBody JobPost job){
+        System.out.println("here");
+       service.addJobPost(job);
+        System.out.println("done");
+    }
+
+    @PutMapping("jobPost")
+    public JobPost updateJob(@RequestBody JobPost job){
+        service.updateJob(job);
+        return service.getJob(job.getPostId());
+    }
+
+    @DeleteMapping("jobPost/{postId}")
+    public String deleteJob(@PathVariable int postId){
+        service.deleteJob(postId);
+        return "Deleted";
     }
 
 //    this explicilty tell this method uses POST
