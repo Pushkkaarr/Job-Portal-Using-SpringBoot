@@ -81,7 +81,7 @@ p {
 				<div class="card">
 					<div class="card-body text-center">
 						<h5 class="card-title">Add Job</h5>
-						<form action="/addjob" method="get">
+						<form action="/addjob" method="post">
 							<!-- Your form fields go here if needed -->
 
 							<button type="submit" class="btn btn-primary">Submit</button>

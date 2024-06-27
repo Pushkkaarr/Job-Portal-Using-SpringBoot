@@ -35,11 +35,15 @@ public class JobController {
         return service.getAllJobPosts();
     }
 
-    @PostMapping("jobPost")
-    public void addjob(@RequestBody JobPost job){
-        System.out.println("here");
-       service.addJobPost(job);
-        System.out.println("done");
+    @PostMapping("/addjob")
+    public String addjob(){
+       return "addjob";
+    }
+    //    this explicilty tell this method uses POST , takes data from addjob Page and saves it .
+    @PostMapping("/handleForm")
+    public String handleForm(JobPost jobPost){
+        service.addJobPost(jobPost);
+        return "success";
     }
 
     @PutMapping("jobPost")
@@ -49,21 +53,19 @@ public class JobController {
     }
 
     @DeleteMapping("jobPost/{postId}")
-    public String deleteJob(@PathVariable int postId){
+    @ResponseBody
+    public String deleteJob(@PathVariable("postId") int postId){
         service.deleteJob(postId);
         return "Deleted";
     }
 
-//    this explicilty tell this method uses POST
-    @PostMapping("/handleForm")
-    public String handleForm(JobPost jobPost){
-        service.addJobPost(jobPost);
-        return "success";
+    @GetMapping("jobPosts/keyword/{keyword}")
+    @ResponseBody // needs to mention here cause not using RESTController
+    public String searchByKeyword(@PathVariable("keyword") String keyword,Model model){
+        List<JobPost> jobPosts = service.search(keyword);
+        model.addAttribute("jobPosts", jobPosts);
+        return "jobpostlist";
     }
-
-//    public List<JobPost> searchByKeyword(){
-//
-//    }
 
     @GetMapping("/viewalljobs")
     public String viewJobs(Model model){
